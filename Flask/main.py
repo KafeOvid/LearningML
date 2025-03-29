@@ -13,6 +13,11 @@ def about():
 def home():
     return '<h1>Home</h1>'
 
+@app.route('/login_valid', methods=['POST'])
+def login_valid():
+    email = request.form.get('email')
+    password = request.form.get('password')
+    return "the email is {}".format(email)
 
 if __name__ == '__main__':
     app.run(debug=True)
